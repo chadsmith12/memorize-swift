@@ -10,7 +10,7 @@ import SwiftUI
 struct CardView: View {
     var content: String
     @State var isFaceUp = true
-    let cardShape = RoundedRectangle(cornerRadius: 40)
+    let cardShape = RoundedRectangle(cornerRadius: 20)
     
     var body: some View {
         ZStack {

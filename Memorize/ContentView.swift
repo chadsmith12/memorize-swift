@@ -8,11 +8,18 @@
 import SwiftUI
 
 struct ContentView: View {
-    var emojis = ["🚘", "🚙", "🏍", "🛩", "🚐", "🏎"]
+    static let vehicleEmojis = ["🚘", "🚙", "🏍", "🛩", "🚐", "🏎", "🚞", "🚉", "🚢", "🚁"]
+    static let technologyEmojis = ["📸", "📲", "📞", "☎️", "💻", "🎥", "📺", "💾", "🕹", "⌚️"]
+    static let flagEmojis = ["🇺🇸", "🏳️‍🌈", "🇸🇦", "🇨🇳", "🏴‍☠️", "🇮🇶", "🏁", "🇻🇪", "🇻🇳", "🇹🇭", "🇬🇧", "🇰🇷"]
+    
+    @State var emojis = vehicleEmojis
+    
     @State var emojiCount = 5
     
     var body: some View {
         VStack {
+            Text("Memorize!")
+                .font(.largeTitle)
             ScrollView {
                 LazyVGrid(columns: [GridItem(.adaptive(minimum: 65))]) {
                     ForEach(emojis[0..<emojiCount], id: \.self) { emoji in
@@ -23,13 +30,29 @@ struct ContentView: View {
             }
             .foregroundColor(.red)
             Spacer()
-            HStack {
-                Button(action: removeEmoji) {
-                    Image(systemName: "minus.circle")
+            HStack(alignment: .bottom) {
+                Button(action: {self.setEmojiType(emojiType: "Vehicle")}) {
+                    VStack {
+                        Image(systemName: "car")
+                        Text("Vehicle")
+                            .font(.caption)
+                    }
                 }
                 Spacer()
-                Button(action: addEmoji){
-                    Image(systemName: "plus.circle")
+                Button(action: {self.setEmojiType(emojiType: "Technology")}) {
+                    VStack {
+                        Image(systemName: "tv")
+                        Text("Technology")
+                            .font(.caption)
+                    }
+                }
+                Spacer()
+                Button(action: {self.setEmojiType(emojiType: "Flags")}) {
+                    VStack {
+                        Image(systemName: "flag")
+                        Text("Flags")
+                            .font(.caption)
+                    }
                 }
             }
             .padding([.leading, .bottom, .trailing])
@@ -38,16 +61,20 @@ struct ContentView: View {
         .padding(.horizontal)
     }
     
-    func removeEmoji() {
-        if emojiCount > 1 {
-            self.emojiCount -= 1
+    func setEmojiType(emojiType: String) {
+        switch emojiType {
+        case "Vehicle":
+            emojis = ContentView.vehicleEmojis
+        case "Technology":
+            emojis = ContentView.technologyEmojis
+        case "Flags":
+            emojis = ContentView.flagEmojis
+        default:
+            emojis = ContentView.vehicleEmojis
         }
-    }
-    
-    func addEmoji() {
-        if emojiCount < emojis.count {
-            self.emojiCount += 1
-        }
+        
+        emojis.shuffle()
+        emojiCount = Int.random(in: 4..<emojis.count)
     }
 }
 
