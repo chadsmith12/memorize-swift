@@ -73,7 +73,7 @@ struct ContentView: View {
             emojis = ContentView.vehicleEmojis
         }
         
-        emojis.shuffle()
+        emojis = emojis.shuffled()
         emojiCount = Int.random(in: 4..<emojis.count)
     }
 }
