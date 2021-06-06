@@ -9,7 +9,9 @@ import Foundation
 
 struct MemoryGame<CardContent> where CardContent: Equatable {
     private(set) var cards: [Card]
+    private var seedCards: [Card]
     private var currentIndexofFaceUp: Int?
+    private(set) var score: Int
     
     init(numberOfPairOfCards: Int, createCardContent: (Int) -> CardContent) {
         cards = []
@@ -21,6 +23,8 @@ struct MemoryGame<CardContent> where CardContent: Equatable {
         }
         
         cards = cards.shuffled()
+        seedCards = []
+        score = 0
     }
     
     mutating func choose(_ card: Card) {
@@ -33,6 +37,11 @@ struct MemoryGame<CardContent> where CardContent: Equatable {
                 if cards[chosenIndex].content == cards[potentialMatchIndex].content {
                     cards[chosenIndex].isMatched = true
                     cards[potentialMatchIndex].isMatched = true
+                    score += 2
+                } else {
+                    if hasSeen(card: card) || hasSeen(card: cards[potentialMatchIndex]) {
+                        score -= 1
+                    }
                 }
                 // no matter what, card should should be face up now
                 currentIndexofFaceUp = nil
@@ -41,10 +50,17 @@ struct MemoryGame<CardContent> where CardContent: Equatable {
             else {
                 for index in cards.indices {
                     cards[index].isFaceUp = false
+                    seedCards.append(card)
                 }
                 currentIndexofFaceUp = chosenIndex
             }
             cards[chosenIndex].isFaceUp.toggle()
+        }
+    }
+    
+    func hasSeen(card: Card) -> Bool {
+        seedCards.contains { currentCard in
+            currentCard.id == card.id
         }
     }
     

@@ -26,9 +26,14 @@ struct ContentView: View {
                 }
             }
             .foregroundColor(viewModel.themeColor)
-            Button("New Game") {
-                viewModel.createNewGame()
+            HStack {
+                Button("New Game") {
+                    viewModel.createNewGame()
+                }
+                Spacer()
+                Text("Score: \(viewModel.currentScore)")
             }
+            
         }
         .padding(.horizontal)
     }
