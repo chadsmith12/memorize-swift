@@ -14,6 +14,7 @@
 		C739E2A82669B3AD009FEF0E /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C739E2A72669B3AD009FEF0E /* CardView.swift */; };
 		C739E2AA2669E9CD009FEF0E /* MemoryGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = C739E2A92669E9CD009FEF0E /* MemoryGame.swift */; };
 		C739E2AC2669EEC1009FEF0E /* EmojiMemoryGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = C739E2AB2669EEC1009FEF0E /* EmojiMemoryGame.swift */; };
+		C739E2AE266C82FF009FEF0E /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = C739E2AD266C82FF009FEF0E /* Theme.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		C739E2A72669B3AD009FEF0E /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		C739E2A92669E9CD009FEF0E /* MemoryGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryGame.swift; sourceTree = "<group>"; };
 		C739E2AB2669EEC1009FEF0E /* EmojiMemoryGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiMemoryGame.swift; sourceTree = "<group>"; };
+		C739E2AD266C82FF009FEF0E /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				C739E2A126686BC0009FEF0E /* Info.plist */,
 				C739E29E26686BC0009FEF0E /* Preview Content */,
 				C739E2A72669B3AD009FEF0E /* CardView.swift */,
+				C739E2AD266C82FF009FEF0E /* Theme.swift */,
 			);
 			path = Memorize;
 			sourceTree = "<group>";
@@ -150,6 +153,7 @@
 				C739E29B26686BBC009FEF0E /* ContentView.swift in Sources */,
 				C739E2A82669B3AD009FEF0E /* CardView.swift in Sources */,
 				C739E2AA2669E9CD009FEF0E /* MemoryGame.swift in Sources */,
+				C739E2AE266C82FF009FEF0E /* Theme.swift in Sources */,
 				C739E29926686BBC009FEF0E /* MemorizeApp.swift in Sources */,
 				C739E2AC2669EEC1009FEF0E /* EmojiMemoryGame.swift in Sources */,
 			);
