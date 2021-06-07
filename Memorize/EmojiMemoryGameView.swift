@@ -14,16 +14,12 @@ struct EmojiMemoryGameView: View {
         VStack {
             Text(game.themeName)
                 .font(.largeTitle)
-            ScrollView {
-                LazyVGrid(columns: [GridItem(.adaptive(minimum: 65))]) {
-                    ForEach(game.cards) { card in
-                        CardView(card: card)
-                            .aspectRatio(2/3, contentMode: .fit)
-                            .onTapGesture {
-                                game.choose(card)
-                            }
+            AspectVGrid(items: game.cards, aspectRatio: 2/3) { card in
+                CardView(card: card)
+                    .padding(4)
+                    .onTapGesture {
+                        game.choose(card)
                     }
-                }
             }
             .foregroundColor(game.themeColor)
             HStack {
@@ -33,7 +29,6 @@ struct EmojiMemoryGameView: View {
                 Spacer()
                 Text("Score: \(game.currentScore)")
             }
-            
         }
         .padding(.horizontal)
     }
@@ -42,8 +37,10 @@ struct EmojiMemoryGameView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ForEach(ColorScheme.allCases, id: \.self) {
-            EmojiMemoryGameView(game: EmojiMemoryGame()).preferredColorScheme($0)
+        let game = EmojiMemoryGame()
+        game.choose(game.cards.first!)
+        return ForEach(ColorScheme.allCases, id: \.self) {
+            EmojiMemoryGameView(game: game).preferredColorScheme($0)
         }
     }
 }

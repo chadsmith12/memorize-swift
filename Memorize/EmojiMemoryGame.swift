@@ -23,7 +23,7 @@ class EmojiMemoryGame: ObservableObject {
     static func createThemes() -> [Theme<String>] {
         [
             Theme<String>(name: "Vehicles", emojiContent: vehicleEmojis, color: "blue"),
-            Theme<String>(name: "Flags", emojiContent: flagEmojis, color: "green", numberOfPairs: 8)
+            Theme<String>(name: "Flags", emojiContent: flagEmojis, color: "green", numberOfPairs: 1)
         ]
     }
     
