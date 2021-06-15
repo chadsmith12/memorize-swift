@@ -9,42 +9,30 @@ import SwiftUI
 
 struct CardView: View {
     let card: MemoryGame<String>.Card
-    let cardShape = RoundedRectangle(cornerRadius: DrawingConsts.cornerRadius)
     
     var body: some View {
         GeometryReader { geometry in
             ZStack {
-                if card.isFaceUp {
-                    cardShape
-                        .fill()
-                        .foregroundColor(.white)
-                    cardShape
-                        .strokeBorder(lineWidth: DrawingConsts.lineWidth)
-                    Pie(startAngle: Angle(degrees: 0 - 90), endAngle: Angle(degrees: 115 - 90))
-                        .padding(5)
-                        .opacity(0.4)
-                    Text(card.content)
-                        .font(font(in: geometry.size))
-                } else if card.isMatched {
-                    cardShape
-                        .opacity(0)
-                }
-                else {
-                    cardShape
-                        .fill()
-                }
+                Pie(startAngle: Angle(degrees: -90), endAngle: Angle(degrees: 25))
+                    .padding(5)
+                    .opacity(0.5)
+                Text(card.content)
+                    .rotationEffect(Angle.degrees(card.isMatched ? 360 : 0))
+                    .animation(.linear(duration: 1).repeatForever(autoreverses: false))
+                    .font(Font.system(size: DrawingConsts.fontSize))
+                    .scaleEffect(scale(thatFits: geometry.size))
             }
+            .cardify(isFaceUp: card.isFaceUp)
         }
     }
     
-    private func font(in size: CGSize) -> Font {
-        Font.system(size: min(size.width, size.height) * DrawingConsts.fontScale)
+    private func scale(thatFits size: CGSize) -> CGFloat {
+        min(size.width, size.height) / (DrawingConsts.fontSize / DrawingConsts.fontScale)
     }
     
     private struct DrawingConsts {
-        static let lineWidth: CGFloat = 3
-        static let cornerRadius: CGFloat = 20
         static let fontScale: CGFloat = 0.7
+        static let fontSize: CGFloat = 32
     }
 }
 
