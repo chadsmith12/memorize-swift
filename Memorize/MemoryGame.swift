@@ -30,9 +30,10 @@ struct MemoryGame<CardContent> where CardContent: Equatable {
             cards.append(Card(content: content, id: pairIndex * 2 + 1))
         }
         
-        cards = cards.shuffled()
         seedCards = []
         score = 0
+        
+        self.shuffle()
     }
     
     mutating func choose(_ card: Card) {
@@ -54,6 +55,10 @@ struct MemoryGame<CardContent> where CardContent: Equatable {
                 currentIndexofFaceUp = chosenIndex
             }
         }
+    }
+    
+    mutating func shuffle() {
+        cards.shuffle()
     }
     
     func hasSeen(card: Card) -> Bool {

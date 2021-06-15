@@ -14,24 +14,10 @@ struct EmojiMemoryGameView: View {
         VStack {
             Text(game.themeName)
                 .font(.largeTitle)
-            AspectVGrid(items: game.cards, aspectRatio: 2/3) { card in
-                CardView(card: card)
-                    .opacity(card.isMatched ? 0 : 1)
-                    .padding(4)
-                    .onTapGesture {
-                        game.choose(card)
-                    }
-            }
-            .foregroundColor(game.themeColor)
-            HStack {
-                Button("New Game") {
-                    game.createNewGame()
-                }
-                Spacer()
-                Text("Score: \(game.currentScore)")
-            }
+            GameBodyView(game: game)
+            GameBottomView(game: game)
         }
-        .padding(.horizontal)
+        .padding()
     }
     
 }

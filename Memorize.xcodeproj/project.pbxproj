@@ -19,6 +19,9 @@
 		C739E2B2266D8C2A009FEF0E /* AspectVGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = C739E2B1266D8C2A009FEF0E /* AspectVGrid.swift */; };
 		C739E2B4266DC52A009FEF0E /* Pie.swift in Sources */ = {isa = PBXBuildFile; fileRef = C739E2B3266DC52A009FEF0E /* Pie.swift */; };
 		C7EE432F26784FA4000B44DE /* Cardify.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EE432E26784FA4000B44DE /* Cardify.swift */; };
+		C7EE4332267865B9000B44DE /* GameBodyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EE4331267865B9000B44DE /* GameBodyView.swift */; };
+		C7EE433426786796000B44DE /* ShuffleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EE433326786796000B44DE /* ShuffleButton.swift */; };
+		C7EE433626786B99000B44DE /* GameBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EE433526786B99000B44DE /* GameBottomView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +39,9 @@
 		C739E2B1266D8C2A009FEF0E /* AspectVGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AspectVGrid.swift; sourceTree = "<group>"; };
 		C739E2B3266DC52A009FEF0E /* Pie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pie.swift; sourceTree = "<group>"; };
 		C7EE432E26784FA4000B44DE /* Cardify.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cardify.swift; sourceTree = "<group>"; };
+		C7EE4331267865B9000B44DE /* GameBodyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameBodyView.swift; sourceTree = "<group>"; };
+		C7EE433326786796000B44DE /* ShuffleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShuffleButton.swift; sourceTree = "<group>"; };
+		C7EE433526786B99000B44DE /* GameBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameBottomView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +74,7 @@
 		C739E29726686BBC009FEF0E /* Memorize */ = {
 			isa = PBXGroup;
 			children = (
+				C7EE433026786593000B44DE /* Views */,
 				C7EE432D26784F5F000B44DE /* Modifiers */,
 				C739E29826686BBC009FEF0E /* MemorizeApp.swift */,
 				C739E29A26686BBC009FEF0E /* EmojiMemoryGameView.swift */,
@@ -99,6 +106,16 @@
 				C7EE432E26784FA4000B44DE /* Cardify.swift */,
 			);
 			path = Modifiers;
+			sourceTree = "<group>";
+		};
+		C7EE433026786593000B44DE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C7EE4331267865B9000B44DE /* GameBodyView.swift */,
+				C7EE433326786796000B44DE /* ShuffleButton.swift */,
+				C7EE433526786B99000B44DE /* GameBottomView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -173,13 +190,16 @@
 				C739E2B2266D8C2A009FEF0E /* AspectVGrid.swift in Sources */,
 				C739E29B26686BBC009FEF0E /* EmojiMemoryGameView.swift in Sources */,
 				C739E2A82669B3AD009FEF0E /* CardView.swift in Sources */,
+				C7EE433426786796000B44DE /* ShuffleButton.swift in Sources */,
 				C739E2B4266DC52A009FEF0E /* Pie.swift in Sources */,
 				C739E2B0266D6067009FEF0E /* ArrayExtensions.swift in Sources */,
 				C739E2AA2669E9CD009FEF0E /* MemoryGame.swift in Sources */,
 				C739E2AE266C82FF009FEF0E /* Theme.swift in Sources */,
 				C739E29926686BBC009FEF0E /* MemorizeApp.swift in Sources */,
+				C7EE4332267865B9000B44DE /* GameBodyView.swift in Sources */,
 				C7EE432F26784FA4000B44DE /* Cardify.swift in Sources */,
 				C739E2AC2669EEC1009FEF0E /* EmojiMemoryGame.swift in Sources */,
+				C7EE433626786B99000B44DE /* GameBottomView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
