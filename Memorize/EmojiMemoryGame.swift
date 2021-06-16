@@ -32,13 +32,19 @@ class EmojiMemoryGame: ObservableObject {
         let theme = EmojiMemoryGame.themes[randomThemeIndex]
         currentTheme = theme
         model = EmojiMemoryGame.createMemoryGame(numberPairOfCards: theme.numberOfPairs, theme: theme)
+        dealtCards = []
     }
     
     @Published private var model: MemoryGame<String>
     @Published private var currentTheme: Theme<String>
+    @Published private(set) var dealtCards: Set<Int>
     
     var cards: [MemoryGame<String>.Card] {
         return model.cards
+    }
+    
+    var undealtCards: [MemoryGame<String>.Card] {
+        cards.filter(isUndealt)
     }
     
     var themeColor: Color {
@@ -75,5 +81,28 @@ class EmojiMemoryGame: ObservableObject {
         let theme = EmojiMemoryGame.themes[randomThemeIndex]
         currentTheme = theme
         model = EmojiMemoryGame.createMemoryGame(numberPairOfCards: theme.numberOfPairs, theme: theme)
+    }
+    
+    func deal(_ card: MemoryGame<String>.Card) {
+        dealtCards.insert(card.id)
+    }
+    
+    func isUndealt(_ card: MemoryGame<String>.Card) -> Bool {
+        !dealtCards.contains(card.id)
+    }
+    
+    func dealAnimation(for card: MemoryGame<String>.Card) -> Animation {
+        var delay = 0.0
+        if let index = cards.firstIndex(where: { $0.id == card.id }) {
+            delay = Double(index) * CardConstants.totalDealDuration / Double(cards.count)
+        }
+        
+        return .easeInOut(duration: CardConstants.dealDuration).delay(delay)
+    }
+    
+    func calculateZIndex(for card: MemoryGame<String>.Card) -> Double {
+        let index = cards.firstIndex(where: { $0.id == card.id }) ?? 0
+        
+        return -Double(index)
     }
 }

@@ -22,6 +22,8 @@
 		C7EE4332267865B9000B44DE /* GameBodyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EE4331267865B9000B44DE /* GameBodyView.swift */; };
 		C7EE433426786796000B44DE /* ShuffleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EE433326786796000B44DE /* ShuffleButton.swift */; };
 		C7EE433626786B99000B44DE /* GameBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EE433526786B99000B44DE /* GameBottomView.swift */; };
+		C7EE43382679B1BB000B44DE /* CardDeckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EE43372679B1BB000B44DE /* CardDeckView.swift */; };
+		C7EE433A2679B3DE000B44DE /* CardConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EE43392679B3DE000B44DE /* CardConstants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +44,8 @@
 		C7EE4331267865B9000B44DE /* GameBodyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameBodyView.swift; sourceTree = "<group>"; };
 		C7EE433326786796000B44DE /* ShuffleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShuffleButton.swift; sourceTree = "<group>"; };
 		C7EE433526786B99000B44DE /* GameBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameBottomView.swift; sourceTree = "<group>"; };
+		C7EE43372679B1BB000B44DE /* CardDeckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDeckView.swift; sourceTree = "<group>"; };
+		C7EE43392679B3DE000B44DE /* CardConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardConstants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +118,8 @@
 				C7EE4331267865B9000B44DE /* GameBodyView.swift */,
 				C7EE433326786796000B44DE /* ShuffleButton.swift */,
 				C7EE433526786B99000B44DE /* GameBottomView.swift */,
+				C7EE43372679B1BB000B44DE /* CardDeckView.swift */,
+				C7EE43392679B3DE000B44DE /* CardConstants.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -197,7 +203,9 @@
 				C739E2AE266C82FF009FEF0E /* Theme.swift in Sources */,
 				C739E29926686BBC009FEF0E /* MemorizeApp.swift in Sources */,
 				C7EE4332267865B9000B44DE /* GameBodyView.swift in Sources */,
+				C7EE433A2679B3DE000B44DE /* CardConstants.swift in Sources */,
 				C7EE432F26784FA4000B44DE /* Cardify.swift in Sources */,
+				C7EE43382679B1BB000B44DE /* CardDeckView.swift in Sources */,
 				C739E2AC2669EEC1009FEF0E /* EmojiMemoryGame.swift in Sources */,
 				C7EE433626786B99000B44DE /* GameBottomView.swift in Sources */,
 			);

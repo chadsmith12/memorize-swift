@@ -9,12 +9,14 @@ import SwiftUI
 
 struct EmojiMemoryGameView: View {
     @ObservedObject var game: EmojiMemoryGame
+    @Namespace private var dealingNamespace
     
     var body: some View {
         VStack {
             Text(game.themeName)
                 .font(.largeTitle)
-            GameBodyView(game: game)
+            GameBodyView(game: game, namespace: dealingNamespace)
+            CardDeckView(game: game, namespace: dealingNamespace)
             GameBottomView(game: game)
         }
         .padding()
