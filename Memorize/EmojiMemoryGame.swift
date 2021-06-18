@@ -81,6 +81,7 @@ class EmojiMemoryGame: ObservableObject {
         let theme = EmojiMemoryGame.themes[randomThemeIndex]
         currentTheme = theme
         model = EmojiMemoryGame.createMemoryGame(numberPairOfCards: theme.numberOfPairs, theme: theme)
+        dealtCards = []
     }
     
     func deal(_ card: MemoryGame<String>.Card) {

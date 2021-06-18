@@ -13,7 +13,9 @@ struct GameBottomView: View {
     var body: some View {
         HStack {
             Button("New Game") {
-                game.createNewGame()
+                withAnimation {
+                    game.createNewGame()
+                }
             }
             Spacer()
             ShuffleButton(game: game)
