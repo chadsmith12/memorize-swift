@@ -7,11 +7,12 @@
 
 import Foundation
 
-struct Theme<Content> {
+struct Theme<Content>: Codable, Identifiable where Content: Codable {
     var name: String
     var emojiContent: [Content]
     var color: String
     var numberOfPairs: Int
+    var id: UUID
     
     init(name: String, emojiContent: [Content], color: String, numberOfPairs: Int) {
         self.init(name: name, emojiContent: emojiContent, color: color)
@@ -26,5 +27,6 @@ struct Theme<Content> {
         self.emojiContent = emojiContent
         self.color = color
         self.numberOfPairs = emojiContent.count
+        self.id = UUID()
     }
 }
