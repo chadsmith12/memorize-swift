@@ -9,6 +9,8 @@ import SwiftUI
 
 struct ThemesListView: View {
     @EnvironmentObject var store: ThemeStore
+    @State private var themeToEdit: Theme<String>?
+    @State private var editMode: EditMode = .inactive
     
     var body: some View {
         NavigationView {
@@ -23,25 +25,42 @@ struct ThemesListView: View {
                             }
                         }
                     }
+                    .gesture(editMode.isEditing ? tapToEditGesture(theme: theme) : nil)
                 }
+                .onDelete(perform: { indexSet in
+                    // delete items here
+                })
+            }
+            .sheet(item: $themeToEdit) { theme in
+                ThemeEditor(theme: $store.themes[theme])
             }
             .navigationTitle("Memorize")
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
-                    Button(action: addTheme, label: {
+                    Button(action: {
+                        //  preform add
+                    }, label: {
                         Image(systemName: "plus")
                     })
-                    
                 }
+
                 ToolbarItem(placement: .navigationBarTrailing) {
                     EditButton()
                 }
             }
+            .environment(\.editMode, $editMode)
         }
     }
     
     private func addTheme() {
         store.insertTheme(named: "New", content: "", color: "red")
+    }
+    
+    private func tapToEditGesture(theme: Theme<String>) -> some Gesture {
+        TapGesture()
+            .onEnded {
+                themeToEdit = store.themes[theme]
+            }
     }
 }
 

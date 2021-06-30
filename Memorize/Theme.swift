@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Theme<Content>: Codable, Identifiable where Content: Codable {
+struct Theme<Content>: Codable, Identifiable, Hashable where Content: Codable, Content: Hashable {
     var name: String
     var emojiContent: [Content]
     var color: String

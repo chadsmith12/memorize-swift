@@ -29,6 +29,11 @@ class ThemeStore: ObservableObject {
         themes.append(EmojiTheme(name: name, emojiContent: [content], color: color, numberOfPairs: numberPairs))
     }
     
+    func getTheme(at index: Int) -> EmojiTheme {
+        let safeIndex = min(max(index, 0), themes.count - 1)
+        return themes[safeIndex]
+    }
+    
     private func storeInUserDefaults() {
         let encodedData = try? JSONEncoder().encode(themes)
         UserDefaults.standard.set(encodedData, forKey: userDefaultsKey)
