@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 struct DefaultThemes {
     private static let vehicleEmojis = ["🚘", "🚙", "🏍", "🛩", "🚐", "🏎", "🚞", "🚉", "🚢", "🚁"]
@@ -13,8 +14,8 @@ struct DefaultThemes {
     
     static func createThemes() -> [Theme<String>] {
         [
-            Theme<String>(name: "Vehicles", emojiContent: vehicleEmojis, color: "blue"),
-            Theme<String>(name: "Flags", emojiContent: flagEmojis, color: "green", numberOfPairs: 6)
+            Theme<String>(name: "Vehicles", emojiContent: vehicleEmojis, color: RGBAColor(red: 0.0, green: 0.0, blue: 1.0, alpha: 1.0)),
+            Theme<String>(name: "Flags", emojiContent: flagEmojis, color: RGBAColor(red: 0.0, green: 1.0, blue: 0.0, alpha: 1.0), numberOfPairs: 6)
         ]
     }
 }

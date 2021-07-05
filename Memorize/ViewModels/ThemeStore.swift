@@ -26,7 +26,7 @@ class ThemeStore: ObservableObject {
     }
     
     func insertTheme(named name: String, content: String, color: String, numberPairs: Int = 2)  {
-        themes.append(EmojiTheme(name: name, emojiContent: [content], color: color, numberOfPairs: numberPairs))
+        themes.append(EmojiTheme(name: name, emojiContent: [content], color: RGBAColor(red: 0, green: 0, blue: 1, alpha: 1), numberOfPairs: numberPairs))
     }
     
     func getTheme(at index: Int) -> EmojiTheme {

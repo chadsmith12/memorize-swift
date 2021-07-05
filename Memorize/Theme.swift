@@ -10,11 +10,11 @@ import Foundation
 struct Theme<Content>: Codable, Identifiable, Hashable where Content: Codable, Content: Hashable {
     var name: String
     var emojiContent: [Content]
-    var color: String
+    var color: RGBAColor
     var numberOfPairs: Int
     var id: UUID
     
-    init(name: String, emojiContent: [Content], color: String, numberOfPairs: Int) {
+    init(name: String, emojiContent: [Content], color: RGBAColor, numberOfPairs: Int) {
         self.init(name: name, emojiContent: emojiContent, color: color)
         self.numberOfPairs = numberOfPairs
         
@@ -22,7 +22,7 @@ struct Theme<Content>: Codable, Identifiable, Hashable where Content: Codable, C
             self.numberOfPairs = emojiContent.count
         }
     }
-    init(name: String, emojiContent: [Content], color: String) {
+    init(name: String, emojiContent: [Content], color: RGBAColor) {
         self.name = name
         self.emojiContent = emojiContent
         self.color = color

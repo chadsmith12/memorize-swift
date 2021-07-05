@@ -23,6 +23,8 @@
 		C743C3BC268AD79500CC6511 /* DefaultThemes.swift in Sources */ = {isa = PBXBuildFile; fileRef = C743C3BB268AD79500CC6511 /* DefaultThemes.swift */; };
 		C743C3BF268C159600CC6511 /* RangeReplaceableCollectionExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C743C3BE268C159600CC6511 /* RangeReplaceableCollectionExtensions.swift */; };
 		C74F1411268C2A2D006D097A /* ThemeEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74F1410268C2A2D006D097A /* ThemeEditor.swift */; };
+		C74F141326928DA0006D097A /* RGBAColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74F141226928DA0006D097A /* RGBAColor.swift */; };
+		C74F141526928E64006D097A /* ColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74F141426928E64006D097A /* ColorExtensions.swift */; };
 		C7EE432F26784FA4000B44DE /* Cardify.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EE432E26784FA4000B44DE /* Cardify.swift */; };
 		C7EE4332267865B9000B44DE /* GameBodyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EE4331267865B9000B44DE /* GameBodyView.swift */; };
 		C7EE433426786796000B44DE /* ShuffleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EE433326786796000B44DE /* ShuffleButton.swift */; };
@@ -50,6 +52,8 @@
 		C743C3BB268AD79500CC6511 /* DefaultThemes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultThemes.swift; sourceTree = "<group>"; };
 		C743C3BE268C159600CC6511 /* RangeReplaceableCollectionExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RangeReplaceableCollectionExtensions.swift; sourceTree = "<group>"; };
 		C74F1410268C2A2D006D097A /* ThemeEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeEditor.swift; sourceTree = "<group>"; };
+		C74F141226928DA0006D097A /* RGBAColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RGBAColor.swift; sourceTree = "<group>"; };
+		C74F141426928E64006D097A /* ColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtensions.swift; sourceTree = "<group>"; };
 		C7EE432E26784FA4000B44DE /* Cardify.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cardify.swift; sourceTree = "<group>"; };
 		C7EE4331267865B9000B44DE /* GameBodyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameBodyView.swift; sourceTree = "<group>"; };
 		C7EE433326786796000B44DE /* ShuffleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShuffleButton.swift; sourceTree = "<group>"; };
@@ -137,6 +141,8 @@
 			isa = PBXGroup;
 			children = (
 				C743C3BE268C159600CC6511 /* RangeReplaceableCollectionExtensions.swift */,
+				C74F141226928DA0006D097A /* RGBAColor.swift */,
+				C74F141426928E64006D097A /* ColorExtensions.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -250,7 +256,9 @@
 				C7EE432F26784FA4000B44DE /* Cardify.swift in Sources */,
 				C7EE43382679B1BB000B44DE /* CardDeckView.swift in Sources */,
 				C739E2AC2669EEC1009FEF0E /* EmojiMemoryGame.swift in Sources */,
+				C74F141326928DA0006D097A /* RGBAColor.swift in Sources */,
 				C7EE433626786B99000B44DE /* GameBottomView.swift in Sources */,
+				C74F141526928E64006D097A /* ColorExtensions.swift in Sources */,
 				C743C3BF268C159600CC6511 /* RangeReplaceableCollectionExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -22,8 +22,8 @@ class EmojiMemoryGame: ObservableObject {
     
     static func createThemes() -> [Theme<String>] {
         [
-            Theme<String>(name: "Vehicles", emojiContent: vehicleEmojis, color: "blue"),
-            Theme<String>(name: "Flags", emojiContent: flagEmojis, color: "green", numberOfPairs: 6)
+            Theme<String>(name: "Vehicles", emojiContent: vehicleEmojis, color: RGBAColor(red: 0, green: 0, blue: 1, alpha: 1)),
+            Theme<String>(name: "Flags", emojiContent: flagEmojis, color: RGBAColor(red: 0, green: 1, blue: 0, alpha: 1), numberOfPairs: 6)
         ]
     }
     
@@ -48,16 +48,7 @@ class EmojiMemoryGame: ObservableObject {
     }
     
     var themeColor: Color {
-        switch currentTheme.color {
-        case "red":
-            return Color.red
-        case "blue":
-            return Color.blue
-        case "green":
-            return Color.green
-        default:
-            return Color.orange
-        }
+        Color(rgbaColor: currentTheme.color)
     }
     
     var themeName: String {
