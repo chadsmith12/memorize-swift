@@ -11,6 +11,7 @@ struct ThemeEditor: View {
     @Environment(\.presentationMode) var presentationMode
     @Binding var theme: Theme<String>
     @State private var newEmojis: String = ""
+    @State private var themeColor = Color.red
     
     private var distinctEmojis: [String] {
         return theme.emojiContent
@@ -22,7 +23,7 @@ struct ThemeEditor: View {
                 Section(header: Text("Name").font(.headline)) {
                     TextField("Name", text: $theme.name)
                 }
-                Section(header: Text("Add Emojis")) {
+                Section(header: Text("Add Emojis").font(.headline)) {
                     HStack {
                         TextField("Emoji", text: $newEmojis)
                         Button("Add") {
@@ -50,6 +51,12 @@ struct ThemeEditor: View {
                     Stepper("\(theme.numberOfPairs) Paris", value: $theme.numberOfPairs, in: min(theme.emojiContent.count, 2)...theme.emojiContent.count)
                         .disabled(theme.emojiContent.count < 2)
                 }
+                Section(header: Text("Color").font(.headline)) {
+                    ColorPicker("Theme Color", selection: $themeColor)
+                        .onChange(of: themeColor, perform: { value in
+                            theme.color = RGBAColor(color: themeColor)
+                    })
+                }
             }
             .toolbar {
                 Button("Done") {
@@ -57,6 +64,9 @@ struct ThemeEditor: View {
                 }
             }
             .navigationTitle(Text(theme.name))
+        }
+        .onAppear {
+            self.themeColor = Color(rgbaColor: self.theme.color)
         }
     }
     

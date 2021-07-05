@@ -18,4 +18,8 @@ struct DefaultThemes {
             Theme<String>(name: "Flags", emojiContent: flagEmojis, color: RGBAColor(red: 0.0, green: 1.0, blue: 0.0, alpha: 1.0), numberOfPairs: 6)
         ]
     }
+    
+    static var newTheme: Theme<String> {
+        Theme<String>(name: "New Theme", emojiContent: ["😀"], color: RGBAColor(red: 1, green: 0, blue: 0, alpha: 1), numberOfPairs: 2)
+    }
 }

@@ -28,7 +28,7 @@ struct ThemesListView: View {
                     .gesture(editMode.isEditing ? tapToEditGesture(theme: theme) : nil)
                 }
                 .onDelete(perform: { indexSet in
-                    // delete items here
+                    store.themes.remove(atOffsets: indexSet)
                 })
             }
             .sheet(item: $themeToEdit) { theme in
@@ -38,7 +38,8 @@ struct ThemesListView: View {
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
                     Button(action: {
-                        //  preform add
+                        store.insertTheme()
+                        themeToEdit = store.getTheme(at: store.themes.count - 1)
                     }, label: {
                         Image(systemName: "plus")
                     })
@@ -53,7 +54,7 @@ struct ThemesListView: View {
     }
     
     private func addTheme() {
-        store.insertTheme(named: "New", content: "", color: "red")
+        store.insertTheme()
     }
     
     private func tapToEditGesture(theme: Theme<String>) -> some Gesture {
